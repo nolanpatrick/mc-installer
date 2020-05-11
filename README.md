@@ -6,3 +6,6 @@ Tested and working on the following distributions:
 <ul>
 <li>Fedora 32</li
 </ul>
+
+NOTE: This script is unofficial and is neither supported nor endorsed by Mojang and/or Microsoft. All files downloaded by this script are property of their respective owners.
+
