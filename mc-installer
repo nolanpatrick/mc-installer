@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "No copyrighted files are distributed along with this script. Everything is downloaded directly from https://www.minecraft.net. All downloaded files are property of their respective owners."
+echo
+echo "By proceeding beyond this point, you accept that you are running this script at your own risk. I am not affiliated in any way with Mojang or Microsoft, and this script is neither supported nor endorsed by Mojang or Microsoft."
+echo
+read -n 1 -r -s -p "Press any key to continue..."
+# thanks to the folks at https://www.tweaking4all.com for the helpful writeup on the read command!
+echo
+echo "Installing java-11-openjdk"
+dnf install -y java-11-openjdk
+echo "Downloading and extracting Minecraft.tar.gz"
+wget -O launcher.tar.gz https://launcher.mojang.com/download/Minecraft.tar.gz
+tar -C /opt/ -xvf launcher.tar.gz
+echo "Downloading minecraft.net favicon (to give the launcher an icon)"
+wget -O /opt/minecraft-launcher/icon.png https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/android-icon-192x192.png
+rm launcher.tar.gz
+echo "Creating .desktop entry"
+rm /usr/share/applications/minecraft-launcher.desktop
+touch /usr/share/applications/minecraft-launcher.desktop
+echo '[Desktop Entry]
+Type=Application
+Name=Minecraft Launcher
+Categories=Game;
+Exec=/opt/minecraft-launcher/minecraft-launcher
+Path=/opt/minecraft-launcher/
+Icon=/opt/minecraft-launcher/icon.png
+Terminal=false' >> /usr/share/applications/minecraft-launcher.desktop
+echo "Done! It may take a few seconds for the Minecraft launcher to appear in the application menu."
