@@ -6,8 +6,8 @@ echo
 read -n 1 -r -s -p "Press any key to continue..."
 # thanks to the folks at https://www.tweaking4all.com for the helpful writeup on the read command!
 echo
-echo "Installing java-11-openjdk"
-dnf install -y java-11-openjdk
+echo "Installing dependencies"
+dnf install -y java-11-openjdk curl
 echo "Downloading and extracting Minecraft.tar.gz"
 wget -O launcher.tar.gz https://launcher.mojang.com/download/Minecraft.tar.gz
 tar -C /opt/ -xvf launcher.tar.gz
