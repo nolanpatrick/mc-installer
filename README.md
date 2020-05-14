@@ -5,7 +5,7 @@ A version for Debian-based distros is coming soon (dependencies cause issues wit
 Tested and working on the following distributions:
 <ul>
 <li>Fedora 32</li>
-<li>Ubuntu 20.04 (with modifications)</li>
+<li>Ubuntu 20.04</li>
 </ul>
 
 <b>NOTE: This script is unofficial and is neither supported nor endorsed by Mojang and/or Microsoft. All files downloaded by this script are property of their respective owners.</b>
